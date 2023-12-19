@@ -68,3 +68,16 @@ The goals of this website are to allow users to share gaming clips and videos th
 * Functionality for logged in users to edit or delete their comments.
 * Functionality for logged in users to update their username and password.
 
+## Design Choices
+
+### Fonts
+
+[Google Fonts](https://fonts.google.com/ "Google Fonts") has been used to select the fonts for the website. The font selected for the logo was [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P) as it perfectly fits the gaming theme of the website. The font [Play](https://fonts.google.com/specimen/Play) has been selected for headers and main body text as it fits the overall theme of the website and feels like it has been pulled directly from a game.
+
+### Colours
+Colours for the website where selected using [Coolors](http://coolors.co "Coolors").
+
+* #808C8C - Battleship grey is used for the background and body of contents.
+* #FF0000 - Red is used for the main logo and header.
+* #FFFFFF - White is used for main body text.
+
