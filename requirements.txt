@@ -1,0 +1,7 @@
+asgiref==3.7.2
+cloudinary==1.37.0
+Django==3.2.23
+django-cloudinary-storage==0.3.0
+Pillow==10.1.0
+pytz==2023.3.post1
+sqlparse==0.4.4
