@@ -81,3 +81,70 @@ Colours for the website where selected using [Coolors](http://coolors.co "Coolor
 * #FF0000 - Red is used for the main logo and header.
 * #FFFFFF - White is used for main body text.
 
+### Icons
+
+The icons used for the site were sourced from [Font Awesome](https://fontawesome.com/ "Font Awesome").
+
+## Structure
+
+The structure of the site will be split into frontend and backend. The frontend of the site will be comprised using [React](https://react.dev/) components with custom [CSS](https://en.wikipedia.org/wiki/CSS) and [React Bootstrap](https://react-bootstrap.netlify.app/) for the design. The backend will be built using [Django Rest Framework](https://www.django-rest-framework.org/) which will hold all necessary data and pass it to the frontend where necessary.
+
+### Database Models
+
+#### Post Model
+
+| Object     | Field         |
+|------------|---------------|
+| owner      | ForeignKey    |
+| created_at | DateTimeField |
+| updated_at | DateTimeField |
+| title      | CharField     |
+| content    | TextField     |
+| embedid    | CharField     |
+
+#### Profile Model
+
+| Object     | Field         |
+|------------|---------------|
+| owner      | OneToOneField |
+| created_at | DateTimeField |
+| updated_at | DateTimeField |
+| name       | CharField     |
+| content    | TextField     |
+| image      | ImageField    |
+
+#### Like Model
+
+| Object     | Field         |
+|------------|---------------|
+| owner      | ForeignKey    |
+| post       | ForeignKey    |
+| created_at | DateTimeField |
+
+#### Follower Model
+
+| Object     | Field         |
+|------------|---------------|
+| owner      | ForeignKey    |
+| followed   | ForeignKey    |
+| created_at | DateTimeField |
+
+#### Comment Model
+
+| Object     | Field         |
+|------------|---------------|
+| owner      | ForeignKey    |
+| post       | ForeignKey    |
+| created_at | DateTimeField |
+| updated_at | DateTimeField |
+| content    | TextField     |
+
+
+### Wireframes
+
+Wireframes have been created using [Balsamic](https://balsamiq.com "Balsamic"). These wireframes gave a basic view of how the site will be laid out. The layout may have changed slightly in the finished product.
+
+
+
+
+
