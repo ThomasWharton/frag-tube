@@ -10,7 +10,7 @@ class PostSerializer(serializers.ModelSerializer):
 
     def get_is_owner(self, obj):
         request = self.context['request']
-        return request.iser == obj.owner
+        return request.user == obj.owner
 
     class Meta:
         model = Post
