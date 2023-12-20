@@ -1,5 +1,3 @@
-from django.http import Http404
-from rest_framework import status
 from rest_framework import generics
 from .models import Profile
 from .serializers import ProfileSerializer
