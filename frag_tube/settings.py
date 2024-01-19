@@ -65,10 +65,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
+    os.environ.get('ALLOWED_HOST'),
     os.environ.get('LOCAL_ALLOWED_HOST'),
     'localhost',
-    '8000-thomaswharton-fragtube-znmj52ekm2k.ws-eu107.gitpod.io',
-    'https://frag-tube-0da3a5b7d9cc.herokuapp.com/'
 ]
 
 
