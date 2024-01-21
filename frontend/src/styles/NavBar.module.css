@@ -21,3 +21,7 @@
     color: #FF0000 !important;
     text-decoration: none;
 }
+
+.Active i {
+    color: #FF0000;
+}
