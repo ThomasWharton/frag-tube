@@ -5,13 +5,21 @@ const NavBar = () => {
   return (
     <Navbar expand="md" fixed="top">
       <Container>
-        <Navbar.Brand>FragTube</Navbar.Brand>
+        <Navbar.Brand>
+          Frag <i className="fas fa-rocket"></i> Tube
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link>Home</Nav.Link>
-            <Nav.Link>Sign in</Nav.Link>
-            <Nav.Link>Sign up</Nav.Link>
+          <Nav className="ml-auto">
+            <Nav.Link>
+              <i className="fas fa-home"></i> Home
+            </Nav.Link>
+            <Nav.Link>
+              <i className="fas fa-sign-in-alt"></i> Sign in
+            </Nav.Link>
+            <Nav.Link>
+              <i className="fas fa-user-plus"></i> Sign up
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
