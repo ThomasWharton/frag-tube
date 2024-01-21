@@ -10,3 +10,11 @@
     font-size: 24px;
     letter-spacing: 3px;
 }
+
+.Link {
+    color: #FFFFFF !important;
+}
+
+.Link:hover {
+    color: #FF0000 !important;
+}
