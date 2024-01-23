@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import {Route, Switch} from 'react-router-dom';
 import './api/axiosDefaults';
 import RegisterForm from "./pages/auth/RegisterForm"
+import LogInForm from './pages/auth/LogInForm';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Container className={styles.Main}>
         <Switch>
           <Route exact path="/" render={() => <h1>Home page</h1>} />
-          <Route exact path="/signin" render={() => <h1>Sign in</h1>} />
+          <Route exact path="/login" render={() => <LogInForm />} />
           <Route exact path="/signup" render={() => <RegisterForm />} />
           <Route render={()=><p>Page not found!</p>} />
         </Switch>
