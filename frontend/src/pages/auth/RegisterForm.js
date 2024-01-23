@@ -31,7 +31,7 @@ const RegisterForm = () => {
       await axios.post("/dj-rest-auth/registration/", registerData);
       history.push("/signin");
     } catch (err) {
-        setErrors(err.response?.data)
+      setErrors(err.response?.data);
     }
   };
 
@@ -53,9 +53,11 @@ const RegisterForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
-            {errors.username?.map((message, idx) =>
-                <Alert varient="warning" key={idx}>{message}</Alert>
-            )}
+            {errors.username?.map((message, idx) => (
+              <Alert className={styles.Alert} varient="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
 
             <Form.Group controlId="password1">
               <Form.Label className="d-none">Password</Form.Label>
@@ -68,6 +70,11 @@ const RegisterForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
+            {errors.password1?.map((message, idx) => (
+              <Alert className={styles.Alert} varient="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
 
             <Form.Group controlId="password2">
               <Form.Label className="d-none">Confirm password</Form.Label>
@@ -80,9 +87,20 @@ const RegisterForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
+            {errors.password2?.map((message, idx) => (
+              <Alert className={styles.Alert} varient="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <Button className={`${styles.Button} mx-auto`} type="submit">
               Register
             </Button>
+            {errors.non_field_errors?.map((message, idx) => (
+              <Alert className={styles.Alert} varient="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            
           </Form>
         </Container>
       </Col>
