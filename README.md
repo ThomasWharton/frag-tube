@@ -27,7 +27,7 @@ Welcome to FragTube, a video sharing platform for gamers to showcase frag movies
 
 #### The Posts Page
 * As a user I can view all the most recent posts, ordered by most recent so that I can keep up to date with new content.
-*  As a user I can search keywords so that I can easily find content or profiles that would be of interest to me.
+* As a user I can search keywords so that I can easily find content or profiles that would be of interest to me.
 * As a logged in user I can view my liked posts so that I can easily view posts I most enjoy.
 * As a logged in user I can view posts from profiles I follow so that I can filter the posts I see by profiles I follow.
 * As a user I can keep scrolling through posts on the site, that are loaded for me automatically so that I do not have to click on a link to the next page.
