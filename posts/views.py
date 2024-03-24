@@ -1,4 +1,4 @@
-from django.db.models import Count
+from django.db.models import Count, Avg
 from rest_framework import generics, permissions, filters
 from django_filters.rest_framework import DjangoFilterBackend
 from .models import Post
@@ -12,7 +12,7 @@ class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.annotate(
         likes_count = Count('likes', distinct=True),
         comments_count = Count('comment', distinct=True),
-        ratings_count = Count('ratings', distinct=True)
+        average_rating = Avg('ratings__rating', distinct=True)
     ).order_by('-created_at')
     filter_backends = [
         filters.OrderingFilter,
@@ -31,6 +31,7 @@ class PostList(generics.ListCreateAPIView):
         'category'
     ]
     ordering_fields = [
+        'ratings_average',
         'likes_count',
         'comments_count',
         'likes__created_at'
@@ -46,6 +47,6 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.annotate(
         likes_count = Count('likes', distinct=True),
         comments_count = Count('comment', distinct=True),
-        ratings_count = Count('ratings', distinct=True)
+        average_rating = Avg('ratings__rating', distinct=True)
     ).order_by('-created_at')
     

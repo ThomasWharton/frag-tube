@@ -13,7 +13,7 @@ class PostSerializer(serializers.ModelSerializer):
     likes_count = serializers.ReadOnlyField()
     comments_count = serializers.ReadOnlyField()
     rating_id = serializers.SerializerMethodField()
-    ratings_count = serializers.ReadOnlyField()
+    average_rating = serializers.ReadOnlyField()
 
     def get_is_owner(self, obj):
         request = self.context['request']
@@ -44,5 +44,5 @@ class PostSerializer(serializers.ModelSerializer):
             'profile_image', 'created_at', 'updated_at',
             'category', 'title', 'content', 'embed_id',
             'like_id', 'likes_count', 'comments_count', 
-            'rating_id', 'ratings_count'
+            'rating_id', 'average_rating'
         ]
