@@ -8,7 +8,7 @@ class RatingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Rating
         fields = [
-            'id', 'owner',
+            'id', 'owner', 'rating',
             'post', 'created_at'
         ]
     
