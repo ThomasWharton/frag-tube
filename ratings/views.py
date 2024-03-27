@@ -25,8 +25,7 @@ class CreateRating(APIView):
     def post(self, request, *args, **kwargs):
         serializer = RatingSerializer(data=request.data)
         if serializer.is_valid():
-            post_id = request.data.get('post')
-            post = Post.objects.get(pk=post_id)
-            serializer.save(owner=request.user, post=post)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            post_id = request.data.get('post')            
+            rating_instance = serializer.save(owner=request.user, post_id=post_id)
+            return Response({'id': rating_instance.id}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
