@@ -14,6 +14,7 @@ class PostSerializer(serializers.ModelSerializer):
     comments_count = serializers.ReadOnlyField()
     rating_id = serializers.SerializerMethodField()
     average_rating = serializers.ReadOnlyField()
+    rating = serializers.SerializerMethodField()
 
     def get_is_owner(self, obj):
         request = self.context['request']
@@ -36,6 +37,13 @@ class PostSerializer(serializers.ModelSerializer):
             ).first()
             return rating.id if rating else None
         return None
+    
+    def get_rating(self, obj):
+        user = self.context['request'].user
+        if user.is_authenticated:
+            rating = Rating.objects.filter(owner=user, post=obj).first()
+            return rating.rating if rating else None
+        return None
 
     class Meta:
         model = Post
@@ -44,5 +52,5 @@ class PostSerializer(serializers.ModelSerializer):
             'profile_image', 'created_at', 'updated_at',
             'category', 'title', 'content', 'embed_id',
             'like_id', 'likes_count', 'comments_count', 
-            'rating_id', 'average_rating'
+            'rating_id', 'average_rating', 'rating'
         ]
