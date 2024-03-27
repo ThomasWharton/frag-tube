@@ -2,6 +2,9 @@ from rest_framework import generics, permissions
 from frag_tube.permissions import IsOwnerOrReadOnly
 from .models import Rating
 from .serializers import RatingSerializer
+from rest_framework import status
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 
 class RatingList(generics.ListCreateAPIView):
