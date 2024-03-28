@@ -1,4 +1,3 @@
-from django.db import IntegrityError
 from rest_framework import serializers
 from .models import Rating
 
@@ -16,7 +15,7 @@ class RatingSerializer(serializers.ModelSerializer):
         user = self.context['request'].user
         post = validated_data['post']
         rating_value = validated_data.get('rating')
-        
+
         try:
             # Check if a rating instance exists for the current user and post
             instance = Rating.objects.get(owner=user, post=post)

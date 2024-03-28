@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import Post
 from likes.models import Like
 from ratings.models import Rating
+from .models import Post
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -19,7 +19,7 @@ class PostSerializer(serializers.ModelSerializer):
     def get_is_owner(self, obj):
         request = self.context['request']
         return request.user == obj.owner
-    
+
     def get_like_id(self, obj):
         user = self.context['request'].user
         if user.is_authenticated:
@@ -28,7 +28,7 @@ class PostSerializer(serializers.ModelSerializer):
             ).first()
             return like.id if like else None
         return None
-    
+
     def get_rating_id(self, obj):
         user = self.context['request'].user
         if user.is_authenticated:
@@ -37,7 +37,7 @@ class PostSerializer(serializers.ModelSerializer):
             ).first()
             return rating.id if rating else None
         return None
-    
+
     def get_rating(self, obj):
         user = self.context['request'].user
         if user.is_authenticated:

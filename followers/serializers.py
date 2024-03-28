@@ -14,11 +14,11 @@ class FollowerSerializer(serializers.ModelSerializer):
             'followed', 'created_at',
             'followed_name'
         ]
-    
+
     def create(self, validated_data):
         try:
             return super().create(validated_data)
         except IntegrityError:
-            return serializer.ValidationError({
+            return serializers.ValidationError({
                 'detail': 'possible duplicate'
             })

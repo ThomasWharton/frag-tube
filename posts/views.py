@@ -1,9 +1,9 @@
 from django.db.models import Count, Avg
 from rest_framework import generics, permissions, filters
 from django_filters.rest_framework import DjangoFilterBackend
+from frag_tube.permissions import IsOwnerOrReadOnly
 from .models import Post
 from .serializers import PostSerializer
-from frag_tube.permissions import IsOwnerOrReadOnly
 
 
 class PostList(generics.ListCreateAPIView):
@@ -39,7 +39,7 @@ class PostList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
-    
+
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = PostSerializer
