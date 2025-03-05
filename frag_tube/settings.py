@@ -70,6 +70,7 @@ ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
     os.environ.get('LOCAL_ALLOWED_HOST'),
     'localhost',
+    '127.0.0.1',
 ]
 
 
@@ -121,7 +122,8 @@ MIDDLEWARE = [
 
 if 'CLIENT_ORIGIN' in os.environ:
     CORS_ALLOWED_ORIGINS = [
-        os.environ.get('CLIENT_ORIGIN')
+        os.environ.get('CLIENT_ORIGIN'),
+        'https://www.youtube.com'
     ]
 if 'CLIENT_ORIGIN_DEV' in os.environ:
     extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
